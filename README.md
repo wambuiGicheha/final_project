@@ -66,7 +66,7 @@ The project is aimed at the following audiences:
    
 ### Model Development
 - **Initial Models**: Logistic Regression (as baseline),Naive Bayes, SVM (Support Vector Machine) for text classification to distinguish between depressive and non-depressive posts.
-- **Comparison Models**: Baseline and advanced machine learning models, including hyperparameter tuning through GridSearchCV, to optimize performance.
+- **Comparison Models**: Baseline and advanced machine learning models, including hyperparameter tuning through RandomSearch, to optimize performance.
   
 ### Evaluation Metrics
 - Accuracy, Precision, Recall, and F1 Score will be used to evaluate the model's performance in identifying depressive posts.
