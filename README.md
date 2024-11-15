@@ -61,7 +61,7 @@ The project is aimed at the following audiences:
 
 ### Data Preprocessing
 1. **Text Cleaning**: Tokenization, lemmatization, removal of stopwords, and punctuation.
-2. **Sentiment Analysis**: Using tools like VADER sentiment analysis to quantify sentiment polarity (positive, neutral, negative) for each post.
+2. **Sentiment Analysis**: Using tools like VADER sentiment analysis to quantify sentiment polarity (depressive, non depressive) for each post.
 3. **Feature Engineering**: Extracting relevant linguistic markers, such as the frequency of depressive words, tone, and sentiment scores.
    
 ### Model Development
