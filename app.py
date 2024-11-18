@@ -21,7 +21,7 @@ st.markdown(
     <style>
     .stApp {
         background-color: #e0f7fa; /* Light blue shade */
-        opacity: 0.6;
+        
     }
     .custom-button {
         background-color: #007BFF; /* Bootstrap Blue */
@@ -54,19 +54,12 @@ This application analyzes social media posts from Reddit to predict whether a us
 st.header("Enter Reddit Text for Analysis")
 user_input = st.text_area(
     "Paste your text here (e.g., Reddit title entry or Reddit body entry):",
-    placeholder="Type or paste text here...",
+    placeholder="Please type or paste text for analysis here.",
     height=100
 )
 
 # Button to make predictions
-button_clicked = st.markdown(
-    """
-    <a href="#" class="custom-button">Analyze Sentiment</a>
-    """,
-    unsafe_allow_html=True
-)
-
-if button_clicked:
+if st.button("Analyze Sentiment"):
     if user_input.strip() == "":
         st.error("Please enter some text for analysis.")
     else:
@@ -96,7 +89,7 @@ st.markdown("---")  # Horizontal divider
 st.markdown(
     """
     <div style='text-align: center; font-size: 0.9em; color: gray;'>
-        <strong>Disclaimer:</strong> Disclaimer: This tool is designed to flag posts that may indicate potential signs of depression. It is not a diagnostic tool. 
+        <strong>Disclaimer:</strong>  This tool is designed to flag posts that may indicate potential signs of depression. It is not a diagnostic tool. 
         For professional help, please consult a licensed mental health professional or a trusted support service.
     </div>
     """,
@@ -106,3 +99,5 @@ st.markdown(
 # Footer
 st.write("---")
 st.write("Developed by Group_11. Powered by Streamlit and Scikit-learn.")
+
+
