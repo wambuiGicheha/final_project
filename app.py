@@ -91,7 +91,7 @@ st.markdown(
     <style>
     .stApp {
         background-color: #e0f7fa; /* Light blue shade */
-        opacity: 0.3;
+        
     }
     .css-1d391kg {  /* Sidebar container class */
         background-color: #C8A2C8; /* Light purple */
