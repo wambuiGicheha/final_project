@@ -85,6 +85,23 @@ It utilizes **TF-IDF** for text vectorization and a logistic regression model fo
 """)
 st.sidebar.write("The dataset used for training includes labeled social media posts.")
 
+# Set blue background color using CSS and sidebar styling
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #e0f7fa; /* Light blue shade */
+        opacity: 0.3;
+    }
+    .css-1d391kg {  /* Sidebar container class */
+        background-color: #C8A2C8; /* Light purple */
+        color: black;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.markdown("---")  # Horizontal divider
 st.markdown(
     """
