@@ -23,6 +23,11 @@ st.markdown(
         background-color: #e0f7fa; /* Light blue shade */
         
     }
+.css-1d391kg {  /* Sidebar container class */
+        background-color: #CBE3EF; /* Light BLUE */
+        color: black;
+    }
+
     .custom-button {
         background-color: #007BFF; /* Bootstrap Blue */
         color: white;
@@ -86,21 +91,7 @@ It utilizes **TF-IDF** for text vectorization and a logistic regression model fo
 st.sidebar.write("The dataset used for training includes labeled social media posts.")
 
 # Set blue background color using CSS and sidebar styling
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #5AA8D6; /*  blue shade */
-        
-    }
-    .css-1d391kg {  /* Sidebar container class */
-        background-color: #CBE3EF; /* Light purple */
-        color: black;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 st.markdown("---")  # Horizontal divider
 st.markdown(
