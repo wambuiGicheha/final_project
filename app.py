@@ -1,4 +1,3 @@
-
 import nltk
 from preprocessing import TextPreprocessor 
 import streamlit as st
@@ -9,7 +8,6 @@ nltk.download('punkt')  # Downloads Punkt tokenizer
 nltk.download('punkt_tab')  # Ensures punkt_tab is available
 nltk.download('stopwords')  # Ensure stopwords are available
 nltk.download('wordnet')  # Ensure WordNet is available for lemmatization
-
 
 # Load the trained machine learning pipeline
 pipeline = joblib.load('models/sentiments_pipeline.pkl')
@@ -23,7 +21,22 @@ st.markdown(
     <style>
     .stApp {
         background-color: #e0f7fa; /* Light blue shade */
-        opacity: 0.3;
+        opacity: 0.6;
+    }
+    .custom-button {
+        background-color: #007BFF; /* Bootstrap Blue */
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+    }
+    .custom-button:hover {
+        background-color: #0056b3; /* Darker Blue for Hover Effect */
     }
     </style>
     """,
@@ -46,7 +59,14 @@ user_input = st.text_area(
 )
 
 # Button to make predictions
-if st.button("Analyze Sentiment"):
+button_clicked = st.markdown(
+    """
+    <a href="#" class="custom-button">Analyze Sentiment</a>
+    """,
+    unsafe_allow_html=True
+)
+
+if button_clicked:
     if user_input.strip() == "":
         st.error("Please enter some text for analysis.")
     else:
@@ -71,7 +91,6 @@ from text from Reddit posts.
 It utilizes **TF-IDF** for text vectorization and a logistic regression model for classification.
 """)
 st.sidebar.write("The dataset used for training includes labeled social media posts.")
-
 
 st.markdown("---")  # Horizontal divider
 st.markdown(
