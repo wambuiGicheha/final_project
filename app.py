@@ -90,11 +90,11 @@ st.markdown(
     """
     <style>
     .stApp {
-        background-color: #e0f7fa; /* Light blue shade */
+        background-color: #5AA8D6; /*  blue shade */
         
     }
     .css-1d391kg {  /* Sidebar container class */
-        background-color: #C8A2C8; /* Light purple */
+        background-color: #CBE3EF; /* Light purple */
         color: black;
     }
     </style>
