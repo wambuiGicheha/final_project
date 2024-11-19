@@ -4,6 +4,7 @@ import joblib
 import time
 import matplotlib.pyplot as plt
 import pandas as pd
+from lime.lime_text import LimeTextExplainer
 
 # Download NLTK resources
 nltk.download('punkt')
@@ -124,4 +125,24 @@ st.sidebar.write("Disclaimer: This tool is not a diagnostic instrument.")
 st.write("---")
 st.write("Developed by Group_11. Powered by Streamlit and Scikit-learn.")
 
+
+# Add LIME explanation button and logic
+if st.button("Explain Prediction with LIME"):
+    # Create an explainer for text data
+    explainer = LimeTextExplainer(class_names=['No significant signs of emotional difficulty', 'Signs of emotional difficulty'])
+    
+    # Generate explanation for the current input text
+    explanation = explainer.explain_instance(
+        user_input,  # Input text
+        pipeline.predict_proba,  # Function that returns prediction probabilities
+        num_features=10  # Number of features (words) to show
+    )
+    
+    # Display LIME explanation as text
+    st.write("LIME Explanation (Top Influential Words):")
+    st.write(explanation.as_list())
+    
+    # Display visualization 
+    fig = explanation.as_pyplot_figure()
+    st.pyplot(fig)
 
