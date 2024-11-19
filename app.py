@@ -15,7 +15,7 @@ nltk.download('wordnet')  # Ensure WordNet is available for lemmatization
 pipeline = joblib.load('models/sentiments_pipeline.pkl')
 
 # Streamlit app configuration
-st.set_page_config(page_title="Mental Well-Being Screening", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="MoodLens: Your Lens to Mental Well-Being ", page_icon="🧠", layout="wide")
 
 # CSS for app styling
 st.markdown(
