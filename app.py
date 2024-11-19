@@ -33,7 +33,7 @@ st.markdown(
 )
 
 # App title and description
-st.title("Mental Well-Being Screening Tool 🧠")
+st.title("MoodLens: Your Lens to Mental Well-Beingl 🧠")
 st.write("""
 This application analyzes social media posts from Reddit to predict whether a user is likely experiencing depression or not. 
 It leverages a pre-trained machine learning model for advanced sentiment analysis.
