@@ -17,20 +17,7 @@ pipeline = joblib.load('models/sentiments_pipeline.pkl')
 # Streamlit app configuration
 st.set_page_config(page_title="MoodLens: Your Lens to Mental Well-Being ", page_icon="🧠", layout="wide")
 
-# CSS for app styling
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-color: #e0f7fa; /* Light blue shade */
-    }
-    .stSidebar {
-        background-color: #C8A2C8; /* Light purple for the sidebar */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 # App title and description
 st.title("MoodLens: Your Lens to Mental Well-Being 🧠")
