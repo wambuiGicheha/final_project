@@ -22,7 +22,7 @@ st.set_page_config(page_title="MoodLens: Your Lens to Mental Well-Being ", page_
 # App title and description
 st.title("MoodLens: Your Lens to Mental Well-Being 🧠")
 st.write("""
-This application analyzes social media posts from Reddit to predict whether a user is likely experiencing depression or not. 
+This application analyzes social media posts from Reddit to predict whether a user is likely depressive or not. 
 It leverages a pre-trained machine learning model for advanced sentiment analysis.
 """)
 
@@ -35,34 +35,34 @@ user_input = st.text_area(
 )
 
 # Button to make predictions
-if st.button("Analyze Sentiment"):
+if st.button("Analyze"):
     if user_input.strip() == "":
-        st.error("Please enter some text for analysis.")
+        st.error("Please enter Reddit text for analysis.")
     else:
         # Predict sentiment
         prediction = pipeline.predict([user_input])[0]
         probability = pipeline.predict_proba([user_input])[0]
         
         # Interpret prediction
-        result = "Depressed" if prediction == 1 else "Not Depressed"
+        result = "Depressive" if prediction == 1 else "Not depressive"
         confidence = probability[int(prediction)] * 100
         
         # Display results
-        st.subheader("Prediction Result")
-        st.write(f"**Prediction:** {result}")
-        st.write(f"**Confidence:** {confidence:.2f}%")
+        st.subheader("Results")
+        st.write(f"**We predict that is sounds:** {result}")
+        st.write(f"**With a confidence level of:** {confidence:.2f}%")
 
 # Button for explanation using LIME
-if st.button("Explain Prediction"):
+if st.button("Why this prediction?"):
     if user_input.strip() == "":
-        st.error("Please enter some text for analysis.")
+        st.error("Please enter Reddit text for analysis.")
     else:
         # Generate LIME explanation
-        explainer = LimeTextExplainer(class_names=["Not Depressed", "Depressed"])
+        explainer = LimeTextExplainer(class_names=["Not Depressive", "Depressive"])
         explanation = explainer.explain_instance(user_input, pipeline.predict_proba, num_features=5)
         
         # Display explanation
-        st.subheader("LIME Explanation")
+        st.subheader("Prediction Insights")
         html_content = explanation.as_html()
         components.html(html_content, height=800, scrolling=True)
 
