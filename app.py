@@ -44,7 +44,7 @@ if st.button("Analyze"):
         probability = pipeline.predict_proba([user_input])[0]
         
         # Interpret prediction
-        result = "Depressive" if prediction == 1 else "Not depressive"
+        result = "depressive" if prediction == 1 else "not depressive"
         confidence = probability[int(prediction)] * 100
         
         # Display results
@@ -58,7 +58,7 @@ if st.button("Why this prediction?"):
         st.error("Please enter Reddit text for analysis.")
     else:
         # Generate LIME explanation
-        explainer = LimeTextExplainer(class_names=["not Depressive", "depressive"])
+        explainer = LimeTextExplainer(class_names=["Not Depressive", "Depressive"])
         explanation = explainer.explain_instance(user_input, pipeline.predict_proba, num_features=5)
         
         # Display explanation
