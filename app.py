@@ -49,7 +49,7 @@ if st.button("Analyze"):
         
         # Display results
         st.subheader("Results")
-        st.write(f"**We predict that is sounds:** {result}")
+        st.write(f"**We predict that this sounds:** {result}")
         st.write(f"**With a confidence level of:** {confidence:.2f}%")
 
 # Button for explanation using LIME
@@ -58,7 +58,7 @@ if st.button("Why this prediction?"):
         st.error("Please enter Reddit text for analysis.")
     else:
         # Generate LIME explanation
-        explainer = LimeTextExplainer(class_names=["Not Depressive", "Depressive"])
+        explainer = LimeTextExplainer(class_names=["not Depressive", "depressive"])
         explanation = explainer.explain_instance(user_input, pipeline.predict_proba, num_features=5)
         
         # Display explanation
