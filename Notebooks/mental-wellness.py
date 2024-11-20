@@ -1,3 +1,6 @@
+import os
+print(os.getcwd())
+
 import nltk
 import streamlit as st
 import joblib
@@ -12,7 +15,8 @@ nltk.download('stopwords')
 nltk.download('wordnet')
 
 # Load the trained machine learning pipeline
-pipeline = joblib.load('models/sentiments_pipeline.pkl')
+pipeline = joblib.load('C:/Users/Cecily/Desktop/final_project/models/sentiments_pipeline.pkl')
+
 
 # Streamlit app configuration
 st.set_page_config(page_title="Mental Well-Being Screening", page_icon="🧠", layout="wide")
