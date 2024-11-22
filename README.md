@@ -1,4 +1,4 @@
-# README: Depressive Content Detection on Reddit Using NLP
+# README: Machine learning for Depressive Content Detection on Reddit Using NLP
 
 ## Project Overview
 
@@ -65,7 +65,7 @@ The project is aimed at the following audiences:
 3. **Feature Engineering**: Extracting relevant linguistic markers, such as the frequency of depressive words, tone, and sentiment scores.
    
 ### Model Development
-- **Initial Models**: Logistic Regression (as baseline),Naive Bayes, SVM (Support Vector Machine) for text classification to distinguish between depressive and non-depressive posts.
+- **Initial Models**: Logistic Regression (as baseline),Naive Bayes, SVM (Support Vector Machine) for text classification to distinguish between depressive and non-depressive posts. Advanced modelling attempt using BERT. 
 - **Comparison Models**: Baseline and advanced machine learning models, including hyperparameter tuning through RandomSearch, to optimize performance.
   
 ### Evaluation Metrics
@@ -75,12 +75,11 @@ The project is aimed at the following audiences:
 
 ## Responsible Use and Ethical Considerations
 
-### Sources of Mental Health Support
+- **Building a Culture of Support, Not Surveillance**: Our goal is to use this model as part of a broader effort to foster a **culture of support**, where users who are going through tough times receive help—not as a tool to police or monitor discussions, but to provide real and immediate support to those in need.
 
-The project will include recommendations to mental health organizations for users flagged by the model. In Kenya, **Mental360** will serve as the primary referral organization for support, offering counseling and mental health education. Other resources like **Befrienders Kenya** and **Amani Counselling** will also be considered.
 
 ### Ethical Considerations
-
+Given the sensitive nature of the data, ethical and responsible use is at the forefront of our approach. These are the key ethical principles guiding our model:
 1. **Non-Alarmist Approach**: The model will be used as a supportive tool to flag potential depressive posts, not as a definitive diagnostic tool.
 2. **Privacy Protection**: All analysis will respect user anonymity, with no personal identification attached to the posts.
 3. **Non-Stigmatization**: The model will avoid attaching stigmatizing terms to users and instead provide pathways to helpful resources.
@@ -109,7 +108,76 @@ This project aims to demonstrate the responsible use of AI and NLP for mental he
 
 ---
 
+## Deployment
+The live application is hosted [here](https://moodlens.streamlit.app) 
+
+---  
+
+## Getting Started  
+
+### Prerequisites  
+Ensure you have the following installed:  
+- Python 3.8 or above  
+- Jupyter Notebook  
+- Necessary libraries specified in the `requirements.txt`  
+
+### Installation  
+1. Clone this repository:  
+   ```bash  
+   git clone https://github.com/your-username/moodlens.git  
+   ```  
+2. Navigate to the project directory:  
+   ```bash  
+   cd moodlens  
+   ```  
+3. Install dependencies:  
+   ```bash  
+   pip install -r requirements.txt  
+   ```  
+
+### Running Locally  
+1. Open the Jupyter Notebook:  
+   ```bash  
+   jupyter notebook index.ipynb  
+   ```  
+2. Follow the notebook instructions to load your dataset and perform sentiment analysis.  
+
+### Running the Web App  
+1. Run the Streamlit app locally:  
+   ```bash  
+   streamlit run app.py  
+   ```  
+2. Access the app in your browser at `http://localhost:8501`.  
+
+## Project Structure  
+```  
+moodlens/  
+├── app.py                  # Streamlit app script  
+├── index.ipynb             # Jupyter Notebook for local analysis  
+├── requirements.txt        # List of dependencies  
+├── README.md               # Documentation  
+└── data/                   # Sample datasets  
+```  
+
+## Contributing  
+We welcome contributions! Please follow these steps:  
+1. Fork this repository.  
+2. Create a new branch:  
+   ```bash  
+   git checkout -b feature-branch  
+   ```  
+3. Commit your changes:  
+   ```bash  
+   git commit -m "Feature description"  
+   ```  
+4. Push to the branch:  
+   ```bash  
+   git push origin feature-branch  
+   ```  
+5. Open a pull request.  
+
+
 ## Contact & Collaboration
 
-To update on completion**
+The project team looks forward to collaborating to improve this model. We appreciate your insights. 
 
